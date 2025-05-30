@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 import org.testng.annotations.Test;
 
+import io.restassured.response.Response;
+
 public class HTTPReq {
 	int id;
 
@@ -26,9 +28,15 @@ public class HTTPReq {
 		data.put("name", "Brod");
 		data.put("job", "Teacher");
 
-		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
+		Response response = given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(data)
 
-				.when().post("https://reqres.in/api/users").jsonPath().getInt("id");// https://reqres.in/api/users
+				.when().post("https://reqres.in/api/users");
+				
+				response.then().log().all();
+		
+		  id = response.jsonPath().getInt("id");
+		
+		// https://reqres.in/api/users
 
 	}
     
