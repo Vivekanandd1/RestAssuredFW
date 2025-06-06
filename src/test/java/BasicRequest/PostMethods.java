@@ -2,9 +2,14 @@ package BasicRequest;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.HashMap;
 
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -60,20 +65,22 @@ public class PostMethods {
 	}
 	
 	@Test
-	void UsingPOJO() {
-		
+	void UsingJSON() throws FileNotFoundException {
+		File f = new File("C:\\Users\\Admin\\eclipse-workspace\\APIAutomationFW\\src\\test\\java\\BasicRequest\\data.json");
+		FileReader fr = new FileReader(f);
+		JSONTokener jt = new JSONTokener(fr);
+		JSONObject jo  = new JSONObject(jt);
 			
 		
-		Response response = given().header("x-api-key", "reqres-free-v1").contentType("application/json").body()
+		given().header("x-api-key", "reqres-free-v1").contentType("application/json").body(jo.toString())
 
-				.when().post("https://reqres.in/api/users");
-		
-		System.out.println(response.body());
+				.when().post("https://reqres.in/api/users")
 				
-		response.then().statusCode(201).log().all();
+				.then().statusCode(201).body("name", equalTo("brock")).log().all();
 		
-		int id = response.jsonPath().getInt("id");
-        System.out.println("User ID: " + id);
+		      
+		
+		
 
 	}
 
