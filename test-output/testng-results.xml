@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-13T09:04:30 IST" name="Default suite" finished-at="2025-06-13T09:04:36 IST" duration-ms="6628">
+    <groups>
+    </groups>
+    <test started-at="2025-06-13T09:04:30 IST" name="Default test" finished-at="2025-06-13T09:04:36 IST" duration-ms="6628">
+      <class name="BasicRequest.Authentication">
+        <test-method signature="BasicAuthOne()[pri:0, instance:BasicRequest.Authentication@6340e5f0]" started-at="2025-06-13T09:04:30 IST" name="BasicAuthOne" finished-at="2025-06-13T09:04:36 IST" duration-ms="6470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BasicAuthOne -->
+      </class> <!-- BasicRequest.Authentication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
