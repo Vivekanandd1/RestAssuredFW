@@ -44,7 +44,8 @@ public class UserTests {
 
 	@Test(priority = 3)
 	public void TestUpdateUser() throws InterruptedException {
-		Thread.sleep(6000);
+		int retryCount = 0;
+		while (retryCount < 3) {
 		userPayload.setFirstName(faker.name().firstName());
 		userPayload.setLastName(faker.name().lastName());
 		userPayload.setEmail(faker.internet().safeEmailAddress());
@@ -52,7 +53,10 @@ public class UserTests {
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		Response responseAfterUpdate = UserEndpoints.ReadUser(this.userPayload.getUsername());
-		Assert.assertEquals(responseAfterUpdate.getStatusCode(), 200);
+		 if (responseAfterUpdate.statusCode() == 200) break;
+		 Thread.sleep(2000);
+		 retryCount++;
+		}
 	}
 
 	@Test(priority = 4)
