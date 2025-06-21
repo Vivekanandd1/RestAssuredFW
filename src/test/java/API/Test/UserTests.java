@@ -27,7 +27,8 @@ public class UserTests {
 	}
 
 	@Test(priority = 1)
-	public void TestPostUser() {
+	public void TestPostUser() throws InterruptedException {
+		Thread.sleep(3000);
 		Response response = UserEndpoints.CreateUser(userPayload);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(), 200);
@@ -38,13 +39,12 @@ public class UserTests {
 		Thread.sleep(3000);
 		Response response = UserEndpoints.ReadUser(this.userPayload.getUsername());
 		response.then().log().all();
-
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 
 	@Test(priority = 3)
 	public void TestUpdateUser() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		userPayload.setFirstName(faker.name().firstName());
 		userPayload.setLastName(faker.name().lastName());
 		userPayload.setEmail(faker.internet().safeEmailAddress());
@@ -60,6 +60,5 @@ public class UserTests {
 		Thread.sleep(3000);
 		Response response = UserEndpoints.DeleteUser(this.userPayload.getUsername());
 		Assert.assertEquals(response.getStatusCode(), 200);
-
 	}
 }
