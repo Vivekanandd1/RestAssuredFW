@@ -8,6 +8,7 @@ API\Utilities\ExtenReports.class
 API\Utilities\DataProviders.class
 API\Payload\User.class
 BasicRequest\XmlParsing.class
+NewFW\Day1Crud.class
 API\Test\DataDrivenTest.class
 API\Test\UserTests.class
 BasicRequest\Authentication.class

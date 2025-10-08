@@ -8,8 +8,7 @@
     <classes>
       <class name="API.Test.UserTests">
         <methods>
-          <include name="TestUpdateUser"/>
-          <include name="TestDeleteUser"/>
+          <include name="TestGetUser"/>
           <include name="setupData"/>
         </methods>
       </class> <!-- API.Test.UserTests -->
