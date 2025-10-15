@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="NewFW.Day1Crud">
+      <class name="NewFW.QueryParam">
         <methods>
-          <include name="Bddgetmethod"/>
+          <include name="BodyValidation"/>
         </methods>
-      </class> <!-- NewFW.Day1Crud -->
+      </class> <!-- NewFW.QueryParam -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

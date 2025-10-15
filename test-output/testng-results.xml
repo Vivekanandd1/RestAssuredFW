@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-08T09:47:49 IST" name="Default suite" finished-at="2025-10-08T09:47:51 IST" duration-ms="1893">
+  <suite started-at="2025-10-15T08:17:25 IST" name="Default suite" finished-at="2025-10-15T08:17:27 IST" duration-ms="2155">
     <groups>
     </groups>
-    <test started-at="2025-10-08T09:47:49 IST" name="Default test" finished-at="2025-10-08T09:47:51 IST" duration-ms="1893">
-      <class name="NewFW.RespHead">
-        <test-method signature="singleUsr()[pri:0, instance:NewFW.RespHead@7e4204e2]" started-at="2025-10-08T09:47:49 IST" name="singleUsr" finished-at="2025-10-08T09:47:51 IST" duration-ms="1775" status="PASS">
+    <test started-at="2025-10-15T08:17:25 IST" name="Default test" finished-at="2025-10-15T08:17:27 IST" duration-ms="2155">
+      <class name="NewFW.Auth">
+        <test-method signature="Authtypes()[pri:0, instance:NewFW.Auth@7e4204e2]" started-at="2025-10-15T08:17:25 IST" name="Authtypes" finished-at="2025-10-15T08:17:27 IST" duration-ms="2031" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- singleUsr -->
-      </class> <!-- NewFW.RespHead -->
+        </test-method> <!-- Authtypes -->
+      </class> <!-- NewFW.Auth -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
